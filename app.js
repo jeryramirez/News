@@ -1,7 +1,12 @@
-import React, {Component, Fragment} from 'react';
-import Header from './src/components/Header';
-class App extends Component {
+import React, { Component, Fragment } from 'react';
 
+import Header from './src/components/Header';
+import Container from './src/components/Container';
+
+class App extends Component {
+    state = {
+        news: []
+    }
     componentDidMount() {
         this.callNewsApi();
     }
@@ -12,14 +17,19 @@ class App extends Component {
 
         const response = await fetch(url);
         const news = await response.json();
-
-        console.log(news);
+        this.setState({
+            news: news.articles
+        })
     }
     
     render() { 
         return ( 
             <Fragment>
-                <Header/>
+                <Header />
+                <Container
+                    news={this.state.news}
+                />
+                
             </Fragment>
         );
     }
