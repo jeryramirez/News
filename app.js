@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import './styles.scss';
+import React, {Component} from 'react';
 
-const App = () => {
-    return (
-        <div className="container">
-            <h1>NEWS</h1>
-        </div>
-    )
+class App extends Component {
+
+    render() { 
+        return ( 
+            <div className="container">
+                <h1>Document Ready</h1>
+            </div>
+        );
+    }
 }
-
-ReactDom.render(<App/>, document.querySelector('#root'))
+ 
+export default App;
