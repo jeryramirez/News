@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-
+import React, {Component, Fragment} from 'react';
+import Header from './src/components/Header';
 class App extends Component {
 
     componentDidMount() {
@@ -18,9 +18,9 @@ class App extends Component {
     
     render() { 
         return ( 
-            <div className="container">
-                <h1>Document Ready</h1>
-            </div>
+            <Fragment>
+                <Header/>
+            </Fragment>
         );
     }
 }
