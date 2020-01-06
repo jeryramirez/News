@@ -2,7 +2,7 @@ import React from 'react';
 import News from './News';
 
 const NewsList = ({news}) => (
-    <div className="row">
+    <div className="newList row">
         {
             news.map(news => (
                 <News

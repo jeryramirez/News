@@ -3,7 +3,7 @@ import React from 'react';
 const News = ({ news }) => {
     const {author, content, description, publishedAt, title, url, urlToImage} = news
     return (
-        <div className="col-sm-12 col-md-4 col-lg-3">
+        <div className="col-sm-12 col-md-4 my-1">
             <div className="card">
                 <img className="card-img-top" src={urlToImage} alt={title} />
                 <div className="card-body">
