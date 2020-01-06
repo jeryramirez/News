@@ -11,12 +11,13 @@ class App extends Component {
         this.callNewsApi();
     }
 
-    callNewsApi = async () => {
+    callNewsApi = async (category = 'general') => {
 
-        const url = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=bb59d49fde4c44a3b98ec85aab089ea4`;
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=bb59d49fde4c44a3b98ec85aab089ea4`;
 
         const response = await fetch(url);
         const news = await response.json();
+
         this.setState({
             news: news.articles
         })
@@ -25,9 +26,12 @@ class App extends Component {
     render() { 
         return ( 
             <Fragment>
-                <Header />
+                <Header
+                    title='NEWS API'
+                />
                 <Container
                     news={this.state.news}
+                    callNewsApi={this.callNewsApi}
                 />
                 
             </Fragment>
